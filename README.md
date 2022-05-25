@@ -1,3 +1,27 @@
+# 个人安装步骤
+参考连接：https://www.notion.so/whilewell/Kali-USB-cf914a0c03904b0eaef52390c5dba043
+
+## 编译软件
+系统：ubuntu 22.04
+
+```
+git clone https://github.com/brektrou/rtl8821CU.git
+cd rtl8821CU
+//需要sudo权限
+make && sudo make install
+```
+
+## 重启
+```
+init 6
+```
+
+## 启用网卡监听
+```
+iw dev wlx3c06a7555388 set monitor none
+```
+其中wlx3c06a7555388为网卡名称，可以通过ifconfig或者iwconfig查看
+
 # Realtek RTL8811CU/RTL8821CU USB wifi adapter driver version 5.4.1 for Linux 4.4.x up to 5.x
 
 Before build this driver make sure `make`, `gcc`, `linux-header`/`kernel-devel`, `bc` and `git` have been installed.
